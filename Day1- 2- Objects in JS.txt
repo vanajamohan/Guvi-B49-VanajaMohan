@@ -1,0 +1,32 @@
+--Object is one of the important reference datatype of JavaScript.
+--Object is Unordered collection of related data
+--Object behave like a container, that holds different type of properties.
+--It stores their element/properties in Key: Value Pairs.
+--Each Key value pair is called as property
+--key value pair is separated by using ":" (colon) symbol
+--Object is more flexible when compared to array
+--Object values are accessed by using the object name .(dot) followed by key name (objectName.key1)
+
+syntax:
+
+      datatype objectName {
+            key 1:"Value 1",
+            key 2:"Value 2",
+            key 3:"Value 3",
+            key 4:"Value 4"
+      }
+
+ Example:  
+
+
+     var mobile ={
+            model:"Apple",
+            color:"Orange",
+            body:"metal",
+            batteryCapacity:"3,110 mAh"
+     }     
+
+
+-- In the above example, mobile is called as object objectName
+-- whereas model,color,body,batteryCapacity are called as key's of the mobile object
+--the value which is enclosed with "" are the values of the particular key

@@ -1,0 +1,15 @@
+http 1.1
+--Made things faster by reusing the information compare to previous version
+--Send and recive single information at a time
+--it works on textual format
+--compress data by itself
+
+
+
+http 2
+
+--This is more faster than previous version
+--Send and recieve multiple information at a time
+--It works on binary protocol
+--It uses HPACK for data compression
+--Prioritization can possible in http 2, which allows the developer to decide which portion of the website can be load at first.
