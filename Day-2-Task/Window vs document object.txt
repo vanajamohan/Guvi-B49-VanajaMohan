@@ -1,0 +1,14 @@
+Window Object  
+    -- Window object is the global / root object in JS
+    -- Browser is called as the window object, each new tab is called as window object
+    -- The first object loaded into the window browser is called as eindow object
+    -- Window Object Properties: Length, InnerWidth, InnerHeight, Catches, etc.
+
+
+
+Document Object
+    -- It works inside the window object
+    -- Website / web application / web pages are called as document object, 
+       every web page/website loads inside in each window is called as document object
+    -- Document is load insode the window object, we manipulate documents in window using document object
+    -- Document object Properties: URL, title, cookie, etc.
