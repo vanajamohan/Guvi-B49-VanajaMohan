@@ -1,0 +1,13 @@
+let strArray = ["hi","hello","racecar","madam"];
+let palindromeStr = [];
+
+(function(){
+    for (i=0; i<strArray.length;i++)
+    {
+        let revStr =  strArray[i].split("").reverse().join("");
+        if(strArray[i] === revStr){
+            palindromeStr.push(strArray[i]);
+        }
+    }
+})();
+console.log("Palindrome Strings : ",palindromeStr);
