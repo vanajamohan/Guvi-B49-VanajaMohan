@@ -1,0 +1,34 @@
+let jsonData = '{"name":"Chennai","state":"TN","country":"India"}';
+
+//for loop
+let printForjson = "";
+for (let i=0; i<jsonData.length; i++)
+{    
+    printForjson += jsonData[i];  
+}
+console.log("Json in For loop: ",printForjson);
+
+//for in loop
+let printForinjson = "";
+for(let key in jsonData) 
+   {      
+     printForinjson += (jsonData[key]);   
+   }
+   console.log("Json in For in loop: ",printForinjson);
+
+//for of loop 
+let printForofjson =""; 
+for (let key of jsonData)
+{      
+    printForofjson += key;  
+} 
+console.log("Json in For of loop: ",jsonData);
+
+//foreach loop 
+let printForeachjson =""; 
+Object.keys(jsonData).forEach(function(key)
+{
+    printForeachjson += (jsonData[key]);
+});
+console.log("Json in Foreach loop: ",printForeachjson);
+
