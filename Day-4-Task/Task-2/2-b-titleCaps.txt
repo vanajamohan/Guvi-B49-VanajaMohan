@@ -1,0 +1,13 @@
+let strArray = ["hi","hello","welcome"];
+let convertStr = [];
+
+let titleCaps = () => {
+    for (i=0; i<strArray.length;i++)
+    {
+        let arryVar = strArray[i].charAt(0).toUpperCase() + strArray[i].substring(1);
+        convertStr.push(arryVar);
+        
+    }
+    console.log("After Converting Array String to Title Caps : ",convertStr);
+};
+titleCaps();
