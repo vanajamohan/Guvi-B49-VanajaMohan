@@ -1,0 +1,11 @@
+class Uberprice
+{
+    calculatePrice(km)
+    {
+        // Rs. 10 / km
+        console.log(`Total Fare is ${10 *km}`);
+    }
+}
+
+let uber = new Uberprice();
+uber.calculatePrice(8);

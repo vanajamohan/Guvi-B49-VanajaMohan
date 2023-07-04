@@ -1,0 +1,16 @@
+class Person
+{
+    constructor(){
+        console.log("Person Detail Class");
+    }
+    personDetails()
+    {
+        let name = "VanajaMohan";
+        let age = "25";
+        console.log(`Person name is ${name} and Person Age is ${age}`);
+    }
+
+}
+
+let personObj = new Person();
+personObj.personDetails();
