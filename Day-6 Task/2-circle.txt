@@ -1,23 +1,40 @@
 class Circle {
   constructor(radius, color) {
-    this.radius = radius;
-    this.color = color;
+    this._radius = radius;
+    this._color = color;
   }
-  getRadius(){
-    return this.radius;
+  get Radius(){
+    return this._radius;
     };
-  setRadius(value){
-    this.radius = value;
+  set Radius(value){
+    this._radius = value;
     };
-  getColor();
-  setColor();
-  
+  get Color(){
+    return this._color;
+  };
+  set Color(value){
+    this._color = value;
+  };
+  toString(radius,color){
+      this._radius = radius;
+      this._color = color;
+    console.log(`Circle [Radius: ${this._radius} , Color: ${this._color}]`);
+    };
   getArea(){
-    return Math.PI * this.radius * this.radius;
+    return Math.PI * this._radius * this._radius;
     };
   getCircumference(){
-    return 2 * Math.PI * this.radius;
+    return 2 * Math.PI * this._radius;
     };
 }
 
-let cir = new Circle(1.0, "red");
+let circleObj = new Circle(1.0, "red");
+console.log("Radius before setting : ",circleObj.Radius);
+console.log("Colour before setting : ",circleObj.Color);
+circleObj.Radius = 2;
+circleObj.Color = "Blue";
+console.log("Radius after setting : ",circleObj.Radius);
+console.log("Colour after setting : ",circleObj.Color);
+console.log("Area : ",circleObj.getArea());
+console.log("Circumference : ",circleObj.getCircumference());
+circleObj.toString(5,"Green");
