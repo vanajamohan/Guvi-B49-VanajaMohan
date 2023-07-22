@@ -3,7 +3,6 @@ const table = document.getElementById("dataTable");
 
 form.addEventListener("submit", function (event) {
   event.preventDefault();
-  debugger;
   const fname = document.getElementById("fname").value;
   const lname = document.getElementById("lname").value;
   const address = document.getElementById("address").value;
