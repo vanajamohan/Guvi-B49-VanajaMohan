@@ -3,3 +3,9 @@ body{
         background-image: linear-gradient(rgb(246, 75, 17), white, green);           
         background-repeat: no-repeat;
 }
+
+p{
+    font-size: 40px;
+    font-weight: bold;
+    color: blue;
+}
