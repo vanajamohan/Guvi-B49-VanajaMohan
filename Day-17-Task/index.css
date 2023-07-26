@@ -1,4 +1,34 @@
-.flexrow{
+/*.container{
+     display: flex;
+   /* flex-direction: row;
+    width:600px;
     display: flex;
-  flex-direction: row;
+         flex-direction: column-reverse; 
+        flex-wrap: wrap; 
+       
+        justify-content: end; 
+        
+        border: 1px solid rgba(69, 44, 44, 0.771);
+        background-color: rgba(149, 118, 153, 0.832);
+        padding: 10px;
+        
+       
+        width: 20%;
+        display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 10px;
+  background-color: #bdcddb;
+  padding: 10px;
+}
+
+.row col-lg-4 col-sm-12{
+  flex: 0 0 auto;
+  margin: 10px;
+}*/
+.container{
+  border: 2px solid black;
+ 
+}
+.card{
+ background-color: rgb(205, 205, 28);
 }

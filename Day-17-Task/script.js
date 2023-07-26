@@ -1,47 +1,86 @@
   //Create a new element and set its attributes
 
-  
-  const card1h2 = document.createElement("h2");
-  const cardcolumndiv = document.createElement("div");
-  const cardbodydiv = document.createElement("div");
+  const apiUrl = "https://restcountries.com/v3.1/all";
 
- 
+fetch(apiUrl).then(response => {
+    if(response.status === 200){
+        return response.json();
+    }
+}
+    ).then((val )=>{
+        console.log(val);
+       
+        for (var i = 0; i < 3; i++) {
+         
+         let countryname = val[i].name.common; 
+         let capital = val[i].capital;
+         let region = val[i].region;
+         let countrycode = val[i].cioc;
+         let latlong = val[i].capitalInfo.latlng;
+        // latlong = latlong[0].split(",");
+         let lat = latlong[0];
+         let long = latlong[1];
+         let sourcelink = val[i].flags.png;
 
-  card1h2.setAttribute("id","cardh2");
-  card1h2.innerText = "Click Button to see Weather"
+         console.log(val[i].flag);
+         console.log(val[i].name.common);
+         console.log(val[i].capital);
+         console.log(val[i].region);
+         console.log(val[i].cioc);
+         console.log(val[i].capitalInfo.latlng);
+         console.log(latlong[0]);
+         console.log(latlong[1]);
+         console.log(val[i].flags.png);
 
-  cardcolumndiv.setAttribute("id","card1");
-  cardcolumndiv.setAttribute("class","card-columns");
+         const maindiv = document.getElementById("main");
+          const cardcolumndiv = document.createElement("div");
+          cardcolumndiv.setAttribute("id", "card");
+          cardcolumndiv.setAttribute("class", "card");
+          cardcolumndiv.style.backgroundColor ="beige";
+          //cardcolumndiv.style.boader ="1px solid black";
+          
+          const imgtag = document.createElement("img");
+          imgtag.src = `${sourcelink}`;
+          imgtag.style.width ="100%";
 
-  cardbodydiv.setAttribute("id","container");
-  cardbodydiv.setAttribute("class","container");
+          const cardbodydiv = document.createElement("div");
+          cardbodydiv.setAttribute("id", "cardbody");
+          cardbodydiv.setAttribute("class", "card-body");
+          cardbodydiv.innerHTML = `${countryname}`;
+          cardbodydiv.style.textAlign = "center";
+          cardbodydiv.style.backgroundColor ="beige";
 
+         
+          
+          const para1 = document.createElement("p");
+          para1.setAttribute("class","card-text");
+          para1.innerHTML = `Capital : ${capital}`;
+          para1.style.textAlign = "center"
 
-  const ele = document.createElement("div");
-  ele.setAttribute("id", "riyaz");
-  ele.setAttribute("class", "riyasClass");
+          const para2 = document.createElement("p");
+          para2.innerHTML = `Region : ${region}`;
+          para2.setAttribute("class","card-text");
+          para2.style.textAlign = "center"
 
-  //Set the text content of the new element
-  ele.innerText = "Hello, welcome to B49 WD Tamil batch!!!";
-  //   const parentEle = document.getElementById("parent");
-  //   parentEle.appendChild(ele);
+          const para3 = document.createElement("p");
+          para3.innerHTML = `Country Code : ${countrycode}`;
+          para3.setAttribute("class","card-text");
+          para3.style.textAlign = "center"
 
-  const para = document.createElement("p");
+          const link = document.createElement("a");
+          link.setAttribute("class", "btn btn-primary");
+          link.setAttribute("target", "_blank");
+          link.setAttribute("href", `https://api.openweathermap.org/data/2.5/weather?lat= ${lat} &lon= ${long} &appid=37ba9824a231c697643e4a57ef092cf6`);
+          link.innerText = "Click For Weather";
+          link.style.textAlign = "center"
 
-  para.innerHTML = `<span style="color: blue">HELLOOOO!!!!!</span>`;
-  //   para.innerText = "Manikandan Anabalagan!!!";
-  //   parentEle.appendChild(para);
+          
+          
+           maindiv.appendChild(cardcolumndiv,cardbodydiv,imgtag,para1,para2,para3,link);             
+              }
+             } )
+        .catch((err =>{
+            console.log("Error:  ", err)
+        })
 
-  const ach = document.createElement("a");
-  //id = "main", class = "mainDiv"
-  //setAttribute(name, value);
-  //setAttribute("id","main");
-  //setAttribute("class", "mainDiv");
-  //<a href="" target="_blank">Click me!!!</a>
-  ach.setAttribute("target", "_blank");
-  ach.setAttribute("href", "");
-  ach.innerText = "Click me!!!";
-  //   parentEle.appendChild(ach);
-
-  const parentEle = document.getElementById("parent");
-  parentEle.append(ele, para, "Test ", ach);
+        );
