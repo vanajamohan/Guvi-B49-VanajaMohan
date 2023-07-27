@@ -32,7 +32,7 @@ fetch(apiUrl).then(response => {
          console.log(latlong[1]);
          console.log(val[i].flags.png);
 
-         const maindiv = document.getElementById("main");
+         
           const cardcolumndiv = document.createElement("div");
           cardcolumndiv.setAttribute("id", "card");
           cardcolumndiv.setAttribute("class", "card");
@@ -53,18 +53,18 @@ fetch(apiUrl).then(response => {
          
           
           const para1 = document.createElement("p");
-          para1.setAttribute("class","card-text");
+          para1.setAttribute("class","card-text1");
           para1.innerHTML = `Capital : ${capital}`;
           para1.style.textAlign = "center"
 
           const para2 = document.createElement("p");
           para2.innerHTML = `Region : ${region}`;
-          para2.setAttribute("class","card-text");
+          para2.setAttribute("class","card-text2");
           para2.style.textAlign = "center"
 
           const para3 = document.createElement("p");
           para3.innerHTML = `Country Code : ${countrycode}`;
-          para3.setAttribute("class","card-text");
+          para3.setAttribute("class","card-text3");
           para3.style.textAlign = "center"
 
           const link = document.createElement("a");
@@ -75,8 +75,8 @@ fetch(apiUrl).then(response => {
           link.style.textAlign = "center"
 
           
-          
-           maindiv.appendChild(cardcolumndiv,cardbodydiv,imgtag,para1,para2,para3,link);             
+           const maindiv = document.getElementById("main");
+           maindiv.append(cardcolumndiv,cardbodydiv,imgtag,para1,para2,para3,link);             
               }
              } )
         .catch((err =>{

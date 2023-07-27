@@ -27,8 +27,12 @@
 }*/
 .container{
   border: 2px solid black;
- 
+  display:flex;
+  flex-direction:column;
+  
 }
 .card{
+  
  background-color: rgb(205, 205, 28);
+ 
 }
