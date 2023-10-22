@@ -3,9 +3,14 @@ import './App.css'
 import CakeItems from './CakeItems';
 import Home from './Home';
 import './styles.css'
+import image from "./img/thumbbg.jpg"
+import './index.css'
+import { useCallback } from 'react';
+import { useReducer } from 'react';
 
 
-function App() {
+
+function App(props) {
 
 //list of items
 
@@ -84,30 +89,30 @@ function App() {
   }
   ];
 
-  const [count, setCount] = useState(0);
-  handleCallback = (childData) => {
-    setCount({ count: childData });
-};
  
-    
+  
 
+
+ 
+  const [cartCount, setCartCount] = useState(0);
+ 
   return (
     <>
-<body>
-      <Home count={count}/>
-      <section class="py-5">
-            <div class="container px-4 px-lg-5 mt-5">
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-      {items.map((items) => <CakeItems items={items} parentCallback={handleCallback} />)}
+      <Home cartCount={cartCount} />
+      <section className="py-5">
+            <div className="container px-4 px-lg-5 mt-5">
+                <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+
+      {items.map((items) => <CakeItems items={items} setCartCount={setCartCount}  />)}
       </div>
             </div>
         </section>
      
         {/* <!-- Footer--> */}
-        <footer class="py-5 bg-dark">
-            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Cluster Cakes@2023</p></div>
+        <footer className="py-5 bg-dark">
+            <div className="container"><p className="m-0 text-center text-white">Copyright &copy; Cluster Cakes@2023</p></div>
         </footer>
-        </body>
+        
     </>
   )
 }

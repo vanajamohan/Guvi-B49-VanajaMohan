@@ -1,24 +1,14 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import './styles.css'
 import { useState } from 'react';
-import Home from './Home';
 
-function CakeItems({items}) {
+function CakeItems({items, setCartCount }) {
     const [flag, setFlag] = useState(true);
-    const [count, setCount] = useState(0);
 
-    const handleClickAdd = () => {
-        setFlag(false);
-        setCount((count) => count + 1);
-        props.parentCallback(count);
-    }
-    const handleClickRemove = () => {
-        setFlag(true);
-        setCount((count) => count - 1)
-    }
+   
   return (
     <div>
-        
+          
                 <div className="col mb-5">
     <div className="card h-100">
         {/* <!-- Sale badge--> */}
@@ -41,8 +31,14 @@ function CakeItems({items}) {
         <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
         <div className="text-center">
                 {flag ?  
-                <a className="btn btn-outline-dark mt-auto" onClick={handleClickAdd}> Add Item Cart </a>  
-                :  <a className="btn btn-outline-dark mt-auto" onClick={handleClickRemove}> Remove From Cart  </a> 
+                <a className="btn btn-outline-dark mt-auto" onClick={() => {
+                    setCartCount((count) => count + 1);
+                    setFlag(false);
+                  }}> Add Item Cart </a>  
+                :  <a className="btn btn-outline-dark mt-auto"   onClick={() => {
+                    setCartCount((count) => count - 1);
+                    setFlag(true);
+                  }}> Remove From Cart  </a> 
                 }
                 </div>
            
@@ -50,8 +46,8 @@ function CakeItems({items}) {
     </div>
     </div>
 
-  
-    
+   
+   
     </div>
   )
 }

@@ -4,7 +4,7 @@ import image from "./img/thumbbg.jpg"
 import './index.css'
 
 
-function Home({count}) {
+function Home({cartCount}) {
   return (
     <div>
        
@@ -21,7 +21,7 @@ function Home({count}) {
                         <button className="btn btn-outline-dark" type="submit">
                             <i className="bi-cart-fill me-1"></i>
                             Cart
-                            <span className="badge bg-dark text-white ms-1 rounded-pill">{count}</span>
+                            <span className="badge bg-dark text-white ms-1 rounded-pill">{cartCount}</span>
                         </button>
                     </form>
                 </div>
