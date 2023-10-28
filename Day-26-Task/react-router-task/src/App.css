@@ -1,0 +1,31 @@
+
+.navbar { 
+  background-color: #ece5e5; 
+  display: flex; 
+  padding: 3px; 
+  align-items: center;
+  justify-content: center;
+ 
+} 
+
+.navMenu { 
+  list-style: none; 
+  display: flex;
+} 
+
+.link { 
+  color: #131212; 
+  text-decoration: none; 
+  padding: 20px; 
+  font-size: 1.4rem; 
+ 
+} 
+
+/* Changing the color */
+.link:hover { 
+  color: rgb(39, 213, 16); 
+}
+
+
+
+
